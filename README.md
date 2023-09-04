@@ -1,2 +1,2 @@
 # verify_cyber_security
-Try cyber security measures
+サイバーセキュリティの攻撃手法や対策を試すリポジトリ
