@@ -2,7 +2,14 @@ const express = require("express");
 const router = express.Router();  // ルーティング用オブジェクト
 
 router.get("/", (req, res) => {
+    res.setHeader("X-TimestamP", Date.now());  // X-Timestampというヘッダをレスポンスに追加する。
+ 
     let message = req.query.message;
+    if (message === ""){
+        res.status(400);  // messageが空の場合、400エラー
+        message = "messageが空です。";
+    }
+
     res.send({ message });
 });
 
