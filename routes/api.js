@@ -5,9 +5,15 @@ router.get("/", (req, res) => {
     res.setHeader("X-Timestamp-2", Date.now());  // X-Timestampというヘッダをレスポンスに追加する。
  
     let message = req.query.message;
+
+    const lang = req.headers["x-lang"];
     if (message === ""){
         res.status(400);  // messageが空の場合、400エラー
-        message = "messageが空です。";
+        if(lang ==="en"){
+            message = "message is empty.";
+        }else {
+            message = "messageが空です。";
+        }
     }
 
     res.send({ message });
