@@ -4,4 +4,4 @@ WORKDIR /src/app/
 
 COPY . src/app/
 
-EXPOSE 3001
+EXPOSE 3000
