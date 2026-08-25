@@ -1,0 +1,12 @@
+version: '3'
+services:
+  security:
+    build: .
+    container_name: valid_security
+    tty: true
+    volumes:
+      - ./:/src/app/
+      # ホスト側のマウントでイメージ内のnode_modulesが隠れないようにする
+      - /src/app/node_modules
+    ports:
+      - "3000:3000"
